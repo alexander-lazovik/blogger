@@ -1,11 +1,29 @@
-<h1>All Authors</h1>
+<p id="notice"><%= notice %></p>
 
-<ul id="authors">
-  <% @authors.each do |author| %>
-    <li>
-      <%= link_to author.name, author_path(author), class: 'author_title' %>
-    </li>
-  <% end %>
-</ul>
+<h1>Authors</h1>
 
-<%= link_to "Create a new author", new_author_path(), class: 'new_author' %>
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.username %></td>
+        <td><%= author.email %></td>
+        <td><%= link_to 'Show', author %></td>
+        <td><%= link_to 'Edit', edit_author_path(author) %></td>
+        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Author', new_author_path %>
