@@ -1,0 +1,7 @@
+<%= render partial: 'form' %>
+
+<p> <%= link_to "<< Back to authors list", authors_path %>
+<%= link_to "delete", author_path(@author), method: :delete, data: {confirm: "Really delete the author?"} %>
+<%= link_to "edit", edit_author_path(@author) %>
+</p>
+

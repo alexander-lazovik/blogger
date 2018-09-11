@@ -1,0 +1,22 @@
+<%= form_for(@author) do |f| %>
+  <ul>
+  <% @author.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :article_count %><br />
+    <%= f.text_field :article_count %>
+  </p>  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
